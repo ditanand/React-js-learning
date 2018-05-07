@@ -6,9 +6,15 @@ class Helloworld extends React.Component{
   getSum(){
   	return (2 + 2)
   }
+
+  getName(){
+  	return "Anand";
+  }
   render(){
   	return(
 	  	<section className="foo">
+         {this.getName()}
+         <br/>
          {this.getSum()}
 	  	</section>
   	)

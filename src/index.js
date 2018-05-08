@@ -8,14 +8,17 @@ class List extends React.Component{
     super();
     // state is component specific
     this.state = {
-      firstName: "Anand"
+      names: ['anand', 'kartikey', 'shadab']
     }
   }
   render(){
   	return(
       <ul>
-        // value can be passed to child component via props
-        <Item firstname={this.state.firstName} lastname="kumar" />
+       {
+        this.state.names.map(function(name){
+         return <Item firstname={name} lastname="kumar" />
+        })
+       }
       </ul>
   	)
   }
@@ -25,9 +28,7 @@ class Item extends React.Component{
   render(){
     return(
       <li>
-       {this.props.firstname}
-       <br/>
-       {this.props.lastname}
+       {this.props.firstname} {this.props.lastname}
       </li>
     )
   }

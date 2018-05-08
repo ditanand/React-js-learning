@@ -16,7 +16,7 @@ class List extends React.Component{
       <ul>
        {
         this.state.names.map(function(name){
-         return <Item firstname={name} lastname="kumar" />
+         return <Item key={name} firstname={name} lastname="kumar" />
         })
        }
       </ul>
